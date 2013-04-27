@@ -1,0 +1,26 @@
+{
+  "name": "gistjs",
+  "version": "0.0.1",
+  "description": "A convenient command line utility for gists",
+  "main": "index.js",
+  "scripts": {
+    "test": "node tests/run.tests.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AWinterman/gist.js.git"
+  },
+  "keywords": [
+    "gist",
+    "command",
+    "line"
+  ],
+  "author": "Andrew Winterman",
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "gitHead": "bbccbdf90b61ca9f211e0d7fff1d53aca65cb649",
+  "dependencies": {
+    "commander": "~1.1.1",
+    "request": "~2.20.0"
+  }
+}
