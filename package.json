@@ -23,4 +23,8 @@
     "commander": "~1.1.1",
     "request": "~2.20.0"
   }
+ "preferGlobal": "true",
+  "bin": {
+    "gist" : "index.js"
+  }
 }

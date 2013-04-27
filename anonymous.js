@@ -1,16 +1,7 @@
-// Post to https://api.github.com/gists
-
-// Expects files to be a json object:
-// ```json
-//    { "file1.md": {
-//      content: "String of the file"
-//      }
-//    }
-// ```
-
 module.exports = simple_post
 
 request = require("request")
+path = require("path")
 fs = require("fs")
 
 function simple_post(file_names, description){
@@ -34,22 +25,23 @@ function simple_post(file_names, description){
     function handler(err, data){
       // got to save a local reference to i, cause by the time these get called
       // the enclosing scope will have changed
+      var name = path.basename(file_names[counter])
       if (err) console.log(err)
       if (data) {
-        files[file_names[counter]] = {content: ""+data}
+        files[name] = {content: ""+data}
       }
       // So long as we have not exhausted the list of files, call handler with
       // the next one.
       (++counter < file_names.length) || done(payload)
-
     }
   }
 
   function done(payload){
-    console.log(payload)
-    request.post({
+    var r = {
         url: "https://api.github.com/gists" 
+      , headers: {"User-Agent": "nodejs/0.0.1 (node) gist command line tool v0.0.1 by @AWinterman" }
       , json: payload
-    }, function(err, data){ console.log(data.statusCode, data.body)})
+    }
+    request.post(r, function(err, data){ console.log("url: ", data.body.html_url)})
   }
 }
