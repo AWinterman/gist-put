@@ -1,5 +1,5 @@
 {
-  "name": "gistjs",
+  "name": "gist-put",
   "version": "0.1.0",
   "description": "A convenient command line utility for gists",
   "main": "index.js",
