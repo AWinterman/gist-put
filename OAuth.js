@@ -1,7 +1,7 @@
 var request = require("request")
   , qs = require("qs")
   , credential = require("./credential")
-  , USER_AGENT = require("user_agent")
+  , USER_AGENT = require("./user_agent")
 
 
 // getting authorization
@@ -27,7 +27,7 @@ function get_token(ready){
         })
       , 'auth': credentials
       }
-
+    console.log(r)
     request.post(r, ready)
   })
 }
