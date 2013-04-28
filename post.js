@@ -1,10 +1,12 @@
 module.exports = simple_post
 
+credential = require("./credential")
 request = require("request")
 path = require("path")
 fs = require("fs")
 
-function simple_post(file_names, description){
+
+function simple_post(file_names, privacy, description){
   // iterate through each file, opening it and reading the contents
 
   var payload 
