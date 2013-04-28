@@ -22,11 +22,9 @@
   "dependencies": {
     "commander": "~1.1.1",
     "request": "~2.20.0",
-    "keychain": "0.0.4",
-    "qs": "~0.6.1"
   },
   "preferGlobal": "true",
   "bin": {
-    "gist": "index.js"
+    "gist-put": "gist-put"
   }
 }
