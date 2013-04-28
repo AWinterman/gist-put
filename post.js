@@ -55,7 +55,7 @@ function simple_post(file_names, privacy, description){
     if (payload.public !== undefined){
       // then we need to get an Oauth token
       oauth(function(err, data){
-        r.headers.Authorization = "bearer " +  data.body.token
+        r.headers.Authorization = "bearer " +  JSON.parse(data.body).token
         request.post(r, report)
       })
     } else {
@@ -66,6 +66,5 @@ function simple_post(file_names, privacy, description){
 
 function report(err, data){
   // TODO open browser automatically
-  console.log(data.body)
   console.log("url: ", data.body.html_url)
 }

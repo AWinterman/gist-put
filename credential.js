@@ -27,7 +27,7 @@ function get_credential(ready){
 
 
   git_credentials.on('exit', function(code, signal) {
-      if(code = 0) console.log("Using credentials from `git credential`")
+      console.log("Using credentials from `git credential`")
       else if(signal != null) console.log('killed: ' + signal);
   })
 

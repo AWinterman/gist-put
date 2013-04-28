@@ -27,7 +27,6 @@ function get_token(ready){
         })
       , 'auth': credentials
       }
-    console.log(r)
     request.post(r, ready)
   })
 }
