@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-var post_gist = require("./post")
+var post_gist = require("lib/post")
   , program = require("commander")
 
 program
