@@ -51,7 +51,7 @@ twitter) and we can work it out. Even better, submit a pull request!
 
 `gist-put` will make a gist, and print the url to the command line. Eventually
 this will also put the url in your clipboard, or open a browser window with
-your gist in it, just the way everybody else's does. There are options to determine
+your gist in it, just the way everybody else's gist utility does. There are options to determine
 privacy on the gist, and to add a description if you swing that way.
 
 ```bash
