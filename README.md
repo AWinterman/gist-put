@@ -29,14 +29,14 @@ humor. Enjoy!
 
 You'll love it, so why don't you npm install it:
 ```
-$ npm install gist-put
+$ npm install -g gist-put
 ```
 
 
 If you ever decide you hate it, npm uninstall ftw!
 
 ```
-npm uninstall gist-put
+npm uninstall -g gist-put
 ```
 
 And then find `gist-put` among your [authorized apps](https://github.com/settings/applications) on github, and remove it from
@@ -50,11 +50,11 @@ twitter) and we can work it out. Even better, submit a pull request!
 ## usage ##
 
 `gist-put` will make a gist, and print the url to the command line. Eventually
-this will also put the url in your clipboard, or <del>open a browser window</del> with
+this will also put the url in your clipboard, <del>or open a browser window</del> with
 your gist in it, just the way everybody else's gist utility does. There are options to determine
 privacy on the gist, and to add a description if you swing that way.
 
-```bash
+```sh
 # a private gist
 gist-put file
 
@@ -70,7 +70,7 @@ gist-put 1-file-to-gist 2-file-to-gist 3-file-to-gist
 # make it anonymous
 gist-put -a file
 
-# open it in your browser once it is created
+# a browser and navigate to your newly created gist.
 gist-put -o file
 ```
 
