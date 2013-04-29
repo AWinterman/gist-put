@@ -2,32 +2,37 @@
 
 var post_gist = require("./lib/post")
   , program = require("commander")
+  , exec = require('child_process').spawn
+  , temp = require("temp")
 
 program
   .version("0.0.0")
   .usage("[options] <file1, file2>")
-  .option("-u, --public", "Make a public gist on your account (It's private by default). Needs to read your authentication details from `git credential fill`.")
+  .option("-p, --public", "Make a public gist on your account (It's secret by default). Needs to read your authentication details from `git credential fill`.")
   .option("-a, --anonymous", "Make an anonymous gist")
   .option('-d, --description <string>', "A description for your gist", String)
-
-program.on("--help", function(){
-  //additional help?
-})
-
-// TODO, if (program.args.length === 0){ 
-// // Open editor and then on quite make a
-// // gist of the file 
-// }
+  .option("-o, --open", "open the url in the default browser after creation")
 
 program.parse(process.argv)
 
-var privacy = ["anonymous", "public", "private"]
+// TODO, 
+if (program.args.length === 0){ 
+// Open editor and then on quite make a
+// gist of the file 
+  editor = process.env.EDITOR || "vim"
+  temp.open("gist-file", function(err, data){
+    exec(editor, [data.path])
+  })
+}
+
+var privacy = ["anonymous", "public", "secret"]
   .some(function(d, i, arr){
     privacy = arr[i]
-    if (arr[i] == "private"){
+    if (arr[i] == "secret"){
       return true
     }
     return program[d]
   })
 
-post_gist(program.args, privacy, process.description) 
+
+post_gist(program.args, privacy, process.description, program.open) 
