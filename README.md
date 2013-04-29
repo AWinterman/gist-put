@@ -6,7 +6,7 @@ It makes [gists](https://gist.github.com/) out of files! From the command line!
 ## features ##
 
 - it takes multiple files, single files, or
-  [eventually](https://github.com/AWinterman/gist-put/blob/master/gist-put#L17-L20),
+  [eventually](https://github.com/AWinterman/gist-put/blob/master/gist-put#L22),
 no files at all!
 - it doesn't care if you reference files in `pwd` or in some distant
   directory (this was a problem with the alternative I tried).
@@ -50,7 +50,7 @@ twitter) and we can work it out. Even better, submit a pull request!
 ## usage ##
 
 `gist-put` will make a gist, and print the url to the command line. Eventually
-this will also put the url in your clipboard, or open a browser window with
+this will also put the url in your clipboard, or <del>open a browser window</del> with
 your gist in it, just the way everybody else's gist utility does. There are options to determine
 privacy on the gist, and to add a description if you swing that way.
 
@@ -69,6 +69,9 @@ gist-put 1-file-to-gist 2-file-to-gist 3-file-to-gist
 
 # make it anonymous
 gist-put -a file
+
+# open it in your browser once it's created
+gist-put -o file
 ```
 
 ## Use it like a module ##
