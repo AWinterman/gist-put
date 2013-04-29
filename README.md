@@ -11,12 +11,12 @@ no files at all!
 - it doesn't care if you reference files in `pwd` or in some distant
   directory (this was a problem with the alternative I tried).
 - it gets your credentials at your already-stated level of security
-using the `git credential` tool. If `git credentials` doesn't know your
+using the `git credential` tool. If `git credential` doesn't know your
 credentials, it'll probably error in an ugly way.  [This is an open
 issue](https://github.com/AWinterman/gist-put/issues/1).
 
 It'll get your OAuth2 token from github, letting them deal with how to store
-such things securely. Your git credentials are safe the entire time, or no
+such things securely. Your github credentials are safe the entire time, or no
 less safe than they were given that `git credential` will print your
 password in plain text if you ask nicely. 
 
@@ -49,26 +49,30 @@ twitter) and we can work it out. Even better, submit a pull request!
 
 ## usage ##
 
-```
-$ gist-put file
-```
- will make a private gist
+`gist-put` will make a gist, and print the url to the command line. Eventually
+this will also put the url in your clipboard, or open a browser window with
+your gist in it, just the way everybody else's does. There are options to determine
+privacy on the gist, and to add a description if you swing that way.
 
 ```bash
-$ gist-put -u -d 'so many files to gist!' 1-file-to-gist 2-file-to-gist 3-file-to-gist
-```
-will make a public gist of the listed files with the description passed to
-`-d`, and return the url. 
+# a private gist
+gist-put file
 
+# be descriptive:
+gist-put -d 'so many files to gist!'  file
+
+# make it public
+gist-put -u file 
+
+# multiple files at once:
+gist-put 1-file-to-gist 2-file-to-gist 3-file-to-gist
+
+# make it anonymous
+gist-put -a file
 ```
-$ gist-put -a file
-```
- will make an anonymous gist of `file`, for if you're
-embarrassed about what you have to say. Maybe you like to write semicolons
-after the carriage return or your plotting the next American Revolution.
 
 ## Use it like a module ##
-If for whatever perverted reason you want to play with the constituent pieces,
+If for whatever reason you want to play with the constituent pieces,
 you can do:
 
 ```js
