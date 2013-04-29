@@ -1,7 +1,6 @@
 gist-put
 =======
 
-Still a bit of a work in progress. End goal:
 
 ```
 $ gist-put file
@@ -26,10 +25,17 @@ after the carriage return or your plotting the next American Revolution.
 gets your password securely using the `git credential` tools. If `git
 credentials` doesn't know your credentials, it'll probably error in an ugly
 way.  [This is an open issue](https://github.com/AWinterman/gist-put/issues/1).
-It then gets an OAuth2 token from `github` (it does this before checking if
-you've already got one, and makes no effort to cache your key, this is [another
-issue](https://github.com/AWinterman/gist-put/issues/2)), and makes a post over
+
+It then gets an OAuth2 token from github (looking for the one already
+registered to your account), and makes a post over
 HTTPS. Your git credentials are safe the entire time, or no  less safe than
 they were given that `git credential fill` will print your password in plain
-text. (after you press the carriage return, that is)
+text. 
+
+This module distinguishes itself from the others on npm in that it never asks
+you to store your github credentials anywhere in plain text, doesn't ask you to
+edit any files in order to store your api token, and is a piece of general node
+badassery. Enjoy!
+
+
 
