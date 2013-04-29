@@ -1,30 +1,51 @@
 gist-put
 =======
 
-`gist-put` is a [gist](https://gist.github.com/) command line utility. It  
-makes files into gists! 
+`gist-put` is a [gist](https://gist.github.com/) command line utility. It makes gists out of files! 
 
 ## features ##
 
-- `gist-put` takes multiple files or single files, or
+- it takes multiple files, single files, or
   [eventually](https://github.com/AWinterman/gist-put/blob/master/gist-put#L17-L20),
 no files at all!
-- `gist-put`  doesn't care if you reference files in some or in some distant
-  directory, 
-- `git-put` gets your credentials at your already-stated level of security
+- it doesn't care if you reference files in `pwd` or in some distant
+  directory, (this was a problem with the alternative I tried).
+- it gets your credentials at your already-stated level of security
 using the `git credential` tool. If `git credentials` doesn't know your
 credentials, it'll probably error in an ugly way.  [This is an open
 issue](https://github.com/AWinterman/gist-put/issues/1).
 
-It then gets an OAuth2 token from github (or finds the one it already
-registered to your account). Your git credentials are safe the entire time, or no  less safe than
-they were given that `git credential fill` will print your password in plain
-text. 
+It'll get your OAuth2 token from github, letting them deal with how to store
+such things securely. Your git credentials are safe the entire time, or no
+less safe than they were given that `git credential fill` will print your
+password in plain text if you ask nicely. 
 
 This module distinguishes itself from the others on npm in that it never asks
 you to store your github credentials anywhere in plain text, doesn't ask you to
-edit any files in order to store your api token, and is a piece of general node
-badassery. Enjoy!
+edit any files in order to store your api token, and has a better sense of
+humor. Enjoy!
+
+## installation ##
+
+You'll love it, so why don't you npm install it:
+```
+$ npm install git-put
+```
+
+
+If you ever decide you hate it, npm uninstall ftw!
+
+```
+npm uninstall git-put
+```
+
+And then find `git-put` among your [authorized apps](https://github.com/settings/applications) on github, and remove it from
+the list. 
+
+I guess I could provide a commandline argument for this last step... If this is
+something you'd like, contact me @AWinterman (on github) or @AndyWinterman (on
+twitter) and we can work it out. Even better, submit a pull request!
+
 
 ## usage ##
 
