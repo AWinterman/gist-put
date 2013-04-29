@@ -1,7 +1,7 @@
 gist-put
 =======
 
-`gist-put` is a [gist](https://gist.github.com/) command line utility. It makes gists out of files! 
+It makes [gists](https://gist.github.com/) out of files! From the command line!
 
 ## features ##
 
