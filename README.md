@@ -9,7 +9,7 @@ gist-put
   [eventually](https://github.com/AWinterman/gist-put/blob/master/gist-put#L17-L20),
 no files at all!
 - it doesn't care if you reference files in `pwd` or in some distant
-  directory, (this was a problem with the alternative I tried).
+  directory (this was a problem with the alternative I tried).
 - it gets your credentials at your already-stated level of security
 using the `git credential` tool. If `git credentials` doesn't know your
 credentials, it'll probably error in an ugly way.  [This is an open
@@ -29,17 +29,17 @@ humor. Enjoy!
 
 You'll love it, so why don't you npm install it:
 ```
-$ npm install git-put
+$ npm install gist-put
 ```
 
 
 If you ever decide you hate it, npm uninstall ftw!
 
 ```
-npm uninstall git-put
+npm uninstall gist-put
 ```
 
-And then find `git-put` among your [authorized apps](https://github.com/settings/applications) on github, and remove it from
+And then find `gist-put` among your [authorized apps](https://github.com/settings/applications) on github, and remove it from
 the list. 
 
 I guess I could provide a commandline argument for this last step... If this is
@@ -57,7 +57,6 @@ $ gist-put file
 ```bash
 $ gist-put -u -d 'so many files to gist!' 1-file-to-gist 2-file-to-gist 3-file-to-gist
 ```
-
 will make a public gist of the listed files with the description passed to
 `-d`, and return the url. 
 
