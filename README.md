@@ -17,7 +17,7 @@ issue](https://github.com/AWinterman/gist-put/issues/1).
 
 It'll get your OAuth2 token from github, letting them deal with how to store
 such things securely. Your git credentials are safe the entire time, or no
-less safe than they were given that `git credential fill` will print your
+less safe than they were given that `git credential` will print your
 password in plain text if you ask nicely. 
 
 This module distinguishes itself from the others on npm in that it never asks
