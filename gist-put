@@ -26,14 +26,17 @@ if (program.args.length === 0){
   // })
 }
 
+
 var privacy = ["anonymous", "public", "secret"]
-  .some(function(d, i, arr){
+  .filter(function(d, i, arr){
     privacy = arr[i]
     if (arr[i] == "secret"){
       return true
     }
     return program[d]
-  })
+  })[0]
+
+console.log(privacy)
 
 
 post_gist(program.args, privacy, process.description, program.open) 
