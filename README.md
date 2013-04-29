@@ -70,7 +70,7 @@ gist-put 1-file-to-gist 2-file-to-gist 3-file-to-gist
 # make it anonymous
 gist-put -a file
 
-# open it in your browser once it's created
+# open it in your browser once it is created
 gist-put -o file
 ```
 
