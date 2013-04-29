@@ -13,7 +13,11 @@
   "keywords": [
     "gist",
     "command",
-    "line"
+    "line",
+    "github",
+    "gist.github.com",
+    "gist integration",
+    "utility"
   ],
   "author": "Andrew Winterman",
   "license": "MIT",
