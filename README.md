@@ -12,8 +12,8 @@ no files at all!
   directory (this was a problem with the alternative I tried).
 - it gets your credentials at your already-stated level of security
 using the `git credential` tool. If `git credential` doesn't know your
-credentials, it'll probably error in an ugly way.  [This is an open
-issue](https://github.com/AWinterman/gist-put/issues/1).
+credentials, it'll just prompt you for them. But seriously, life is short, use
+a helper.
 
 It'll get your OAuth2 token from github, letting them deal with how to store
 such things securely. Your github credentials are safe the entire time, or no
