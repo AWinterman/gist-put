@@ -26,6 +26,7 @@ edit any files in order to store your api token, and has a better sense of
 humor. Enjoy!
 
 ## installation ##
+It currently relies on having git 1.7.12, so...
 
 You'll love it, so why don't you npm install it:
 ```
