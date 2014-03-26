@@ -64,7 +64,7 @@ gist-put file
 gist-put -d 'so many files to gist!'  file
 
 # make it public
-gist-put -u file 
+gist-put -p file 
 
 # multiple files at once:
 gist-put 1-file-to-gist 2-file-to-gist 3-file-to-gist
