@@ -12,6 +12,7 @@ program
   .option("-a, --anonymous", "Make an anonymous gist")
   .option('-d, --description <string>', "A description for your gist", String)
   .option("-o, --open", "open the url in the default browser after creation")
+  .option("-b, --block", "the block in the default browser after creation")
 
 program.parse(process.argv)
 

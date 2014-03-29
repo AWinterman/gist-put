@@ -74,8 +74,10 @@ gist-put -a file
 
 # a browser and navigate to your newly created gist.
 gist-put -o file
-```
 
+# how bout a [Bl.ock](http://bl.ocks.org/)?
+gist-put -b file
+```
 ## Use it like a module ##
 If for whatever reason you want to play with the constituent pieces,
 you can do:
