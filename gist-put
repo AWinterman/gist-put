@@ -15,18 +15,6 @@ program
 
 program.parse(process.argv)
 
-// TODO, 
-if (program.args.length === 0){ 
-// Open editor and then on quite make a
-// gist of the file 
-  throw Error("0 args version is not yet implemented")
-  // editor = process.env.EDITOR || "vim"
-  // temp.open("gist-file", function(err, data){
-  //   exec(editor, [data.path])
-  // })
-}
-
-
 var privacy = ["anonymous", "public", "secret"]
   .filter(function(d, i, arr){
     privacy = arr[i]
@@ -39,4 +27,4 @@ var privacy = ["anonymous", "public", "secret"]
 console.log(privacy)
 
 
-post_gist(program.args, privacy, process.description, program.open) 
+post_gist(program.args, privacy, process.description, program.open)
