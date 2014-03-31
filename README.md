@@ -64,7 +64,7 @@ gist-put file
 gist-put -d 'so many files to gist!'  file
 
 # make it public
-gist-put -u file 
+gist-put -p file 
 
 # multiple files at once:
 gist-put 1-file-to-gist 2-file-to-gist 3-file-to-gist
@@ -74,8 +74,10 @@ gist-put -a file
 
 # a browser and navigate to your newly created gist.
 gist-put -o file
-```
 
+# how bout a [Bl.ock](http://bl.ocks.org/)?
+gist-put -b file
+```
 ## Use it like a module ##
 If for whatever reason you want to play with the constituent pieces,
 you can do:
