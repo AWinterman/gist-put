@@ -24,11 +24,11 @@
   "readmeFilename": "README.md",
   "gitHead": "bbccbdf90b61ca9f211e0d7fff1d53aca65cb649",
   "dependencies": {
-    "commander": "~1.1.1",
     "request": "~2.20.0",
     "ap": "~0.2.0",
     "temp": "~0.5.0",
-    "open": "0.0.3"
+    "open": "0.0.3",
+    "nopt": "^2.2.0"
   },
   "preferGlobal": "true",
   "bin": {
