@@ -1,6 +1,6 @@
 {
   "name": "gist-put",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "description": "A convenient command line utility for gists",
   "main": "index.js",
   "scripts": {
