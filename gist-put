@@ -1,30 +1,79 @@
 #!/usr/bin/env node
 
 var post_gist = require("./lib/post")
-  , program = require("commander")
-  , exec = require('child_process').spawn
-  , temp = require("temp")
+  , nopt = require("nopt")
 
-program
-  .version("0.0.0")
-  .usage("[options] <file1, file2>")
-  .option("-p, --public", "Make a public gist on your account (It's secret by default). Needs to read your authentication details from `git credential fill`.")
-  .option("-a, --anonymous", "Make an anonymous gist")
-  .option('-d, --description <string>', "A description for your gist", String)
-  .option("-o, --open", "open the url in the default browser after creation")
+var help = docstring(function help() {/*
 
-program.parse(process.argv)
+  gist-put [-p|--public] [-a|--anonymous] [-d|--description 'short description'] [-o|--open] [file1] [file2] [file3]
 
-var privacy = ["anonymous", "public", "secret"]
-  .filter(function(d, i, arr){
-    privacy = arr[i]
-    if (arr[i] == "secret"){
-      return true
-    }
-    return program[d]
-  })[0]
+    -p, --public
 
-console.log(privacy)
+        Make a public gist on your account (It's secret by default).  Needs to
+        read your authentication details from `git credential fill`.
 
+    -a, --anonymous
 
-post_gist(program.args, privacy, process.description, program.open)
+        Make an anonymous gist
+
+    -d, --description <string>:
+
+        The value of this option, if present, is the description of the gist.
+
+    -o, --open
+
+        Open the url in the default browser after creation.
+
+    -b --blocks
+
+        Also prints the bl.ocks.org url, or, if you've specified --open, opens
+        the bl.ocks.org url instead of the gist url.
+
+*/})
+
+// attribution due to chrisdickinson
+function docstring(fn) {
+    fn = fn + ''
+
+    return fn.slice(fn.indexOf('\n') + 1, fn.lastIndexOf('*/'))
+}
+
+var opts = {
+    'public': Boolean
+  , 'anonymous': Boolean
+  , 'open': Boolean
+  , 'description': String
+  , 'help': Boolean
+  , 'blocks': Boolean
+}
+
+shorthands = {
+    'p': '--public'
+  , 'a': '--anonymous'
+  , 'o': '--open'
+  , 'd': '--description'
+  , 'h': '--help'
+  , 'b': '--blocks'
+}
+
+var args = nopt(opts, shorthands, process.argv)
+
+var options = {}
+  , files
+
+for(var key in args) {
+  if(key === 'argv') {
+    continue
+  }
+
+  options[key] = args[key]
+}
+
+files = args.argv.remain
+
+if(files.length === 0 || args.help) {
+  process.stderr.write(help)
+  process.exit(0)
+}
+
+post_gist(files, options)
