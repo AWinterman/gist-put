@@ -24,7 +24,7 @@
   "readmeFilename": "README.md",
   "gitHead": "bbccbdf90b61ca9f211e0d7fff1d53aca65cb649",
   "dependencies": {
-    "request": "~2.20.0",
+    "request": "~2.88.0",
     "ap": "~0.2.0",
     "temp": "~0.5.0",
     "open": "7.0.0",
